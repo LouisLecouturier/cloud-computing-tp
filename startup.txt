@@ -1,18 +1,1 @@
-#!/bin/bash
-
-# Install Poetry if not already installed
-if ! command -v poetry &> /dev/null
-then
-  curl -sSL https://install.python-poetry.org | python3 -
-fi
-
-# Check if a virtual environment exists, if not, create one
-if [ ! -d "$(poetry env info --path 2>/dev/null)" ]; then
-  poetry install
-fi
-
-# Create a Poetry environment using Python 3.12
-poetry env use python3.12
-
-# Run the FastAPI app
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+gunicorn main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000

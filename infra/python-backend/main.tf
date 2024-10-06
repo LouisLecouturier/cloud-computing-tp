@@ -22,11 +22,13 @@ resource "azurerm_linux_web_app" "tp2PythonApp" {
   service_plan_id     = azurerm_service_plan.tp2Plan.id
 
 
+
   site_config {
     application_stack {
       python_version = "3.12"
     }
-    always_on = true
+    always_on        = true
+    app_command_line = "startup.txt"
   }
 
   zip_deploy_file = data.archive_file.tp2PythonApp.output_path
