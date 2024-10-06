@@ -16,3 +16,10 @@ module "blobstorage" {
   location                    = azurerm_resource_group.tp2.location
   azurerm_resource_group_name = azurerm_resource_group.tp2.name
 }
+
+
+module "python-backend" {
+  source                      = "./python-backend"
+  location                    = azurerm_resource_group.tp2.location
+  azurerm_resource_group_name = azurerm_resource_group.tp2.name
+}

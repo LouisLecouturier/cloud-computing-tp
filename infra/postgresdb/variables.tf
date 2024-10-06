@@ -14,3 +14,17 @@ variable "location" {
   type        = string
   description = "The location/region where the resource group is created."
 }
+
+
+variable "administrator_login" {
+  type        = string
+  default     = "louislecouturier"
+  description = "The administrator login for the PostgreSQL Server."
+}
+
+variable "administrator_login_password" {
+  type        = string
+  default     = "Azerty1234"
+  description = "The administrator login password for the PostgreSQL Server."
+
+}
