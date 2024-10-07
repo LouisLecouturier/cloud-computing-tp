@@ -20,11 +20,14 @@ resource "azurerm_linux_web_app" "tp2PythonApp" {
       python_version = "3.9"
     }
     always_on = true
+
+    app_command_line = "gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app"
   }
+
 
   app_settings = {
     SCM_DO_BUILD_DURING_DEPLOYMENT = "true"
-    WEBSITE_RUN_FROM_PACKAGE       = "1"
+
   }
 
   timeouts {
