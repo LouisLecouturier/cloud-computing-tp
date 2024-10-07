@@ -4,7 +4,7 @@
 
 ## Deployement
 
-THe app is deployed automatically using a azure github action
+The app is deployed automatically using a azure github action
 
 ## Access
 
