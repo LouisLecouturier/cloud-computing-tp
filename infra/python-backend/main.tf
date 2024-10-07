@@ -20,7 +20,6 @@ resource "azurerm_linux_web_app" "tp2PythonApp" {
       python_version = "3.9"
     }
     always_on = true
-
   }
 
   app_settings = {
